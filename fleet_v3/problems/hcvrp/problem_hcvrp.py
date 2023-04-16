@@ -2,8 +2,8 @@ from torch.utils.data import Dataset
 import torch
 import os
 import pickle
-from problems.hcvrp.state_hcvrp import StateHCVRP
-from utils.beam_search import beam_search
+from problems.hcvrp.state_hcvrp38 import StateHCVRP
+from utils.beam_search38 import beam_search
 
 
 class HCVRP(object):
