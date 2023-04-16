@@ -527,7 +527,7 @@ class AttentionModel(nn.Module):
                                 .view(batch_size, num_steps, 1)
                                 .expand(batch_size, num_steps, embeddings.size(-1))
                         ).view(batch_size, num_steps, embeddings.size(-1)),  # [batch_size, num_step, embed_dim]
-                        (torch.tensor(self.problem.VEHICLE_CAPACITY)[None, veh].cuda() - state.used_capacity[torch.arange(batch_size), veh]).transpose(0, 1).unsqueeze(-1)
+                        (torch.tensor(self.problem.VEHICLE_CAPACITY).cuda()[None, veh].cuda() - state.used_capacity[torch.arange(batch_size), veh]).transpose(0, 1).unsqueeze(-1)
                     ),
                     -1
                 )
